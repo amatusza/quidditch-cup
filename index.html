@@ -48,7 +48,7 @@
     <button onclick="startGame()">New Game</button>
 
     <div id="gameboard">
-      <div id="quaffle"></div>
+      <div id="quaffle" onclick= "scoreQuaffle()"></div>
     </div>
 
     <script>
@@ -83,6 +83,17 @@
   
   // Move the Quaffle after so many seconds.
   quaffleTimeoutID = setTimeout(moveQuaffle, quaffleSpeed); // Note: we keep track of this timer by storing it in the quaffleTimeoutID variable in case we need to cancel the movement later.
+
+  function scoreQuaffle(){
+score= score+10;
+
+scoreboard.innerHTML = score;
+
+clearTimeout(quaffleTimeoutID);
+moveQuaffle();
+
+
+  }
 }
     </script>
   </body>
