@@ -55,13 +55,14 @@
       // All of our JavaScript will be written inside this script tag.
         
         var score = 0;
+
         var scoreboard = document.getElementById("scoreboard");
         var quaffle = document.getElementById("quaffle");
 
         var quaffleSpeed = 1500;
         var quaffleTimeoutID = null;
 
-        function startGame () {
+        var startGame = () => {
             score = 0;
             scoreboard.innerHTML = score;
 
@@ -83,18 +84,19 @@
   
   // Move the Quaffle after so many seconds.
   quaffleTimeoutID = setTimeout(moveQuaffle, quaffleSpeed); // Note: we keep track of this timer by storing it in the quaffleTimeoutID variable in case we need to cancel the movement later.
+        }
 
-  function scoreQuaffle(){
-score= score+10;
+  var scoreQuaffle = () => {
+      score += 10;
 
-scoreboard.innerHTML = score;
+      scoreboard.innerHTML = score;
 
-clearTimeout(quaffleTimeoutID);
+
 moveQuaffle();
 
 
   }
-}
+
     </script>
   </body>
 </html>
